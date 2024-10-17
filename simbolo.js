@@ -1,4 +1,4 @@
-let speed = 30;
+let speed = 50;
 let scale = 0.15;
 let canvas;
 let ctx;
@@ -15,7 +15,7 @@ let dvd = {
 (function main() {
     canvas = document.getElementById("screen");
     ctx = canvas.getContext("2d");
-    dvd.img.src = 'LogoAleF.png';
+    dvd.img.src = 'LogoAle (1).png';
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
