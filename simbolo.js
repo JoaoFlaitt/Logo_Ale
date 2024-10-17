@@ -1,8 +1,8 @@
 let speed = 75;
-let scale = 0.35;
+let scale = 0.40;
 let canvas;
 let ctx;
-let dvdColor;
+let dvdColor = '#FFF'; 
 
 let dvd = {
     x: 200,
@@ -20,17 +20,14 @@ let dvd = {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    getRandomColor();
     update();
 })();
 
 function update() {
     setTimeout(() => {
-        ctx.fillStyle = '#000';
+        ctx.fillStyle = '#FFF'; 
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = dvdColor;
-        ctx.fillRect(dvd.x, dvd.y, dvd.img.width * scale, dvd.img.height * scale);
         ctx.drawImage(dvd.img, dvd.x, dvd.y, dvd.img.width * scale, dvd.img.height * scale);
 
         dvd.x += dvd.xspeed;
@@ -47,20 +44,9 @@ function checkHit() {
 
     if (dvd.x + imgWidth >= canvas.width || dvd.x <= 0) {
         dvd.xspeed *= -1;
-        getRandomColor();
     }
 
     if (dvd.y + imgHeight >= canvas.height || dvd.y <= 0) {
         dvd.yspeed *= -1;
-        getRandomColor();
     }
-}
-
-function getRandomColor() {
-    const letters = '0123456789ABCDEF'.split('');
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    dvdColor = color;
 }
