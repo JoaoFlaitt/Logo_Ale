@@ -1,5 +1,5 @@
-let speed = 50;
-let scale = 0.15;
+let speed = 75;
+let scale = 0.35;
 let canvas;
 let ctx;
 let dvdColor;
